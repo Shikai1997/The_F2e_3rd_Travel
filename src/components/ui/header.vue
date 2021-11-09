@@ -52,7 +52,7 @@ export default {
         iconSrcActive: iconActivityActive,
       },
     ]);
-    console.log('test');
+    console.log('home');
     return {
       btnData,
     };
