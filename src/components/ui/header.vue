@@ -7,7 +7,7 @@
     />
     <div class="content m-auto">
       <h1 class="text-white">景點</h1>
-      <button class=" w-28 h-12 inline-flex
+      <button class=" w-[108px] h-12 inline-flex
           justify-center items-center bg-white
           rounded-full mr-3 hover:shadow-lg"
           v-for="data in btnData" :key="data">
@@ -15,11 +15,21 @@
         <img :src="data.iconSrc" alt="" />
         <img :src="data.iconSrcActive" v-if="false" alt="" />
       </button>
-      <div class="mt-4">
-        <input class="w-[468px] h-14" type="text" placeholder="輸入想去的地區">
-        <input type="text" placeholder="輸入景點名稱">
-        <button>
-          <img src="" alt="">
+      <div class="flex mt-4 whitespace-nowrap">
+        <label for="search">
+          <img class="inline-block absolute z-10 mt-4 ml-3"
+          :src="require('@/assets/images/icons/icon_location.svg')" alt="">
+        </label>
+        <input class="w-[468px] h-14 mr-3 rounded-lg
+            focus:outline-none shadow-lg text-gray-dark text-sm
+            pl-11 relative" type="text" id="search" placeholder="輸入想去的地區">
+        <input class="w-[412px] h-14 mr-3 rounded-lg
+            focus:outline-none shadow-lg text-gray-dark
+            text-sm pl-5" type="text" placeholder="輸入景點名稱">
+        <button class="w-40 h-14 bg-red hover:bg-red-light
+            inline-flex justify-center items-center rounded-lg text-white text-xl
+            shadow-lg">
+          <img class="mr-2" :src="require('@/assets/images/icons/icon_search.svg')" alt="">
           <p>搜尋</p>
         </button>
       </div>

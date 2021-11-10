@@ -2,7 +2,7 @@
   <div id="app">
     <Navigation />
     <Header />
-    <div class="content"></div>
+    <SearchDetail />
     <Footer />
     <!-- <p class="red">人人有權享有生命</p> -->
   </div>
@@ -12,12 +12,14 @@
 import Navigation from '@/components/ui/navigation.vue';
 import Header from '@/components/ui/header.vue';
 import Footer from '@/components/ui/footer.vue';
+import SearchDetail from '@/views/searchDetail.vue';
 
 export default {
   components: {
     Navigation,
     Header,
     Footer,
+    SearchDetail,
   },
 };
 </script>
