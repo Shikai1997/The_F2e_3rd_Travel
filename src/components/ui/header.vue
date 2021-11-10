@@ -1,17 +1,28 @@
 <template>
   <header class="h-96 relative overflow-hidden">
     <img
-      class="w-full h-full absolute"
+      class="w-full h-full absolute header__bg"
       :src="require('@/assets/images/view_banner.png')"
       alt=""
     />
     <div class="content m-auto">
       <h1 class="text-white">景點</h1>
-      <button v-for="data in btnData" :key="data">
-        <p v-html="data.text"></p>
+      <button class=" w-28 h-12 inline-flex
+          justify-center items-center bg-white
+          rounded-full mr-3 hover:shadow-lg"
+          v-for="data in btnData" :key="data">
+        <p v-html="data.text" class="mr-2 text-gray"></p>
         <img :src="data.iconSrc" alt="" />
-        <img :src="data.iconSrcActive" alt="" />
+        <img :src="data.iconSrcActive" v-if="false" alt="" />
       </button>
+      <div class="mt-4">
+        <input class="w-[468px] h-14" type="text" placeholder="輸入想去的地區">
+        <input type="text" placeholder="輸入景點名稱">
+        <button>
+          <img src="" alt="">
+          <p>搜尋</p>
+        </button>
+      </div>
     </div>
   </header>
 </template>
@@ -60,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img {
+.header__bg {
   z-index: -1;
 }
 .content {

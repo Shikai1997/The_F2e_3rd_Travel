@@ -34,11 +34,11 @@
           items-center
           rounded-md
           bg-white
-          text-sm text-gray-400
+          text-sm text-gray
           border-2 border-white
           transition
           duration-200
-          hover:border-red-500 hover:text-red-500
+          hover:border-red-500 hover:text-red
           shadow-md
         "
         @mouseover="isHovering = true"
