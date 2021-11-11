@@ -11,7 +11,8 @@ module.exports = {
         gray: {
           DEFAULT: '#959595',
           dark: '#2C2C2C',
-          light: '#F1F1F1',
+          light: '#C8C8C8',
+          bg: '#F1F1F1',
         },
         blue: {
           DEFAULT: '#2A48FF',
@@ -20,6 +21,9 @@ module.exports = {
           DEFAULT: '#B72323',
           light: '#DB3939',
         },
+      },
+      outline: {
+        red: '2px solid #B72323',
       },
     },
   },

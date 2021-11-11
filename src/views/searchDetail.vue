@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-gray-light pt-14">
+    <section class="bg-gray-bg pt-14">
       <div class="w-[1260px] m-auto">
         <div>
           <h2 class="text-xl text-gray-dark flex items-center mb-6">搜尋結果</h2>
