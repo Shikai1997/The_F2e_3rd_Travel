@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-[300px] h-[305px] bg-white mb-8 rounded-lg shadow-lg overflow-hidden
-      hover:outline-red cursor-pointer">
+      hover:outline-red">
     <div class="h-48 bg-red">
       <img src="" alt="" />
     </div>

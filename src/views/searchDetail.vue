@@ -10,6 +10,7 @@
             <Card />
             <Card />
           </div>
+          <Pagination />
         </div>
       </div>
     </section>
@@ -17,10 +18,12 @@
 
 <script>
 import Card from '@/components/block/card.vue';
+import Pagination from '@/components/block/pagination.vue';
 
 export default {
   components: {
     Card,
+    Pagination,
   },
 };
 </script>

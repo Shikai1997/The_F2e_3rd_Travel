@@ -16,6 +16,7 @@ module.exports = {
         },
         blue: {
           DEFAULT: '#2A48FF',
+          light: '#2A48FF33',
         },
         red: {
           DEFAULT: '#B72323',
@@ -24,6 +25,7 @@ module.exports = {
       },
       outline: {
         red: '2px solid #B72323',
+        blue: '1px solid #2A48FF',
       },
     },
   },
