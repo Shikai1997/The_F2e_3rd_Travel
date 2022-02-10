@@ -1,10 +1,6 @@
 <template>
   <header class="h-96 relative overflow-hidden">
-    <img
-      class="w-full h-full absolute header__bg"
-      :src="pageData.backgroundImage"
-      alt=""
-    />
+    <img class="w-full h-full absolute header__bg" :src="pageData.backgroundImage" alt="" />
     <div class="content m-auto">
       <h1 class="text-white" v-html="pageData.title"></h1>
       <router-link
@@ -23,6 +19,7 @@
         :class="[data.title_En, { active: data.title_En === route.name }]"
         v-for="data in btnData"
         :key="data"
+        @click="update(data.title_En)"
       >
         <p v-html="data.title" class="mr-2 text-gray"></p>
       </router-link>
@@ -87,43 +84,48 @@
 </template>
 
 <script>
-import { ref, computed,reactive } from "vue";
+import { computed, reactive, inject } from "vue";
 import { useRoute } from "vue-router";
+import { useStore } from "vuex";
 
 export default {
   setup() {
-    const data = reactive({
-        spot: {
-          backgroundImage: require("@/assets/images/spot_banner.png"),
-          title: "景點",
-          title_En: "spot",
-        },
-        restaurant: {
-          backgroundImage: require("@/assets/images/restaurant_banner.png"),
-          title: "餐飲",
-          title_En: "restaurant",
-        },
-        hotel: {
-          backgroundImage: require("@/assets/images/hotel_banner.png"),
-          title: "旅宿",
-          title_En: "hotel",
-        },
-        activity: {
-          backgroundImage: require('@/assets/images/activity_banner.png'),
-          title: '活動',
-          title_En: 'activity'
-        },
-      });
-    const btnData = Object.values(data);
     const route = useRoute();
+    const store = useStore();
+    const data = reactive({
+      spot: {
+        backgroundImage: require("@/assets/images/spot_banner.png"),
+        title: "景點",
+        title_En: "spot",
+      },
+      restaurant: {
+        backgroundImage: require("@/assets/images/restaurant_banner.png"),
+        title: "餐飲",
+        title_En: "restaurant",
+      },
+      hotel: {
+        backgroundImage: require("@/assets/images/hotel_banner.png"),
+        title: "旅宿",
+        title_En: "hotel",
+      },
+      activity: {
+        backgroundImage: require("@/assets/images/activity_banner.png"),
+        title: "活動",
+        title_En: "activity",
+      },
+    });
+    const btnData = Object.values(data);
+    const update = inject("updateSearchDetail");
     const pageData = computed(() => {
-      return data[route.name] || data['spot'];
+      const activePage = store.getters.getActivePage;
+      return data[route.name] || activePage;
     });
     return {
       btnData,
       route,
       pageData,
-      data
+      data,
+      update,
     };
   },
 };

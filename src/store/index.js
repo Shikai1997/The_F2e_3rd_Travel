@@ -18,7 +18,7 @@ export default createStore({
       "屏東縣",
       "宜蘭縣",
       "花蓮縣",
-      "台東縣",
+      "臺東縣",
       "澎湖縣",
       "金門縣",
       "連江縣",
@@ -26,13 +26,13 @@ export default createStore({
       "新竹市",
       "嘉義市",
     ],
-    activePage: '',
+    activePage: "",
   },
   mutations: {
-    setActivePage(state,val) {
-      console.log(val);
+    setActivePage(state, val) {
+      sessionStorage.setItem("activePage", val);
       state.activePage = val;
-    }
+    },
   },
   actions: {},
   getters: {
@@ -40,7 +40,7 @@ export default createStore({
       return state.citys;
     },
     getActivePage(state) {
-      return state.activePage;
-    }
+      return state.activePage || sessionStorage.getItem("activePage");
+    },
   },
 });
