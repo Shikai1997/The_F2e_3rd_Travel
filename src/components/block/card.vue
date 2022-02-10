@@ -20,7 +20,7 @@
           :src="require('@/assets/images/icons/icon_location_blue.svg')"
           alt=""
         />
-        <a class="text-sm text-blue underline" href="#">臺北市</a>
+        <a class="text-sm text-blue underline" href="#" v-html="city"></a>
       </div>
       <HashTag />
     </div>
@@ -39,9 +39,15 @@ export default {
     const replaceDefaultImages = (e) => {
       e.target.src = require("@/assets/images/noPicture.png");
     };
+
+    const getCity = () => {
+      return props.cardData.Address.substring(0, 3);
+    };
+    getCity();
     return {
       data: props.cardData,
-      replaceDefaultImages
+      city: getCity(),
+      replaceDefaultImages,
     };
   },
 };

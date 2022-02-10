@@ -20,7 +20,8 @@ export default {
     Footer,
     SearchDetail,
   },
-  setup() {},
+  setup() {
+  },
 };
 </script>
 
