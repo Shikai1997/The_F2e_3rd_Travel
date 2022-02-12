@@ -22,7 +22,7 @@
         />
         <a class="text-sm text-blue underline" href="#" v-html="city"></a>
       </div>
-      <HashTag />
+      <HashTag :text="data.Class1" />
     </div>
   </div>
 </template>

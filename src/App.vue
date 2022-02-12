@@ -54,6 +54,7 @@ export default {
           });
           break;
       }
+      console.log(searchData);
     };
     provide("updateSearchDetail", updateSearchDetail);
     updateSearchDetail(store.getters.getActivePage);
